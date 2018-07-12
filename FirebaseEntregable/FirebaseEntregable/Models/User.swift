@@ -24,6 +24,8 @@ class MyUser{
         self.avatar = user.photoURL
     }
     
+    
+    
         
     }
 

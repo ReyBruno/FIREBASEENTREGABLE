@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="lMr-p7-Iic" customClass="LocalContactTableViewCell" customModule="FirebaseEntregable" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="200" id="lMr-p7-Iic" customClass="LocalContactTableViewCell" customModule="FirebaseEntregable" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lMr-p7-Iic" id="2fn-4r-cmP">
@@ -140,6 +140,12 @@
                                         <constraint firstItem="t4i-aq-xDg" firstAttribute="top" secondItem="2fn-4r-cmP" secondAttribute="top" id="eQj-Jd-99c"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="companyLabel" destination="3mE-nQ-WpE" id="OWY-oa-fhS"/>
+                                    <outlet property="emailLabel" destination="nbc-PE-5u8" id="Mrf-nA-78q"/>
+                                    <outlet property="phoneLabel" destination="5EE-c9-HBK" id="gir-Ra-9fU"/>
+                                    <outlet property="usernameLabel" destination="QCM-Gr-Jtn" id="VT2-F7-iGp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

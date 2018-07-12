@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseUI
 
 class ContactsTableViewController: UITableViewController {
     
     var theUser:MyUser?
+    var contacts:[Contact] = []
+    var service = ContactService()
+    var ref: DatabaseReference!
 
     @IBAction func logoutTapped(_ sender: Any) {
         self.logoutSession()
@@ -18,7 +23,6 @@ class ContactsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        
         if self.theUser != nil{
             print("Tengo un usuario: \(String(describing: theUser))")
         }
@@ -35,6 +39,10 @@ class ContactsTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
        
         }
+    
+    func observeNewContacts(){
+        
+    }
         
     
 
@@ -47,23 +55,26 @@ class ContactsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.contacts.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! LocalContactTableViewCell
+        let contacto = self.contacts[indexPath.row]
+        cell.setup(theContact: contacto)
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -9,7 +9,13 @@
 import UIKit
 
 class LocalContactTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +26,18 @@ class LocalContactTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setup(theContact: Contact){
+        self.usernameLabel.text = theContact.name
+        self.emailLabel.text = theContact.email
+        self.phoneLabel.text = theContact.phone
+        if theContact.isDigital == true{
+            self.companyLabel.text = "DigitalHouse"
+        } else{
+            self.companyLabel.text = "Other"
+        }
+    }
+    
+    
 
 }
