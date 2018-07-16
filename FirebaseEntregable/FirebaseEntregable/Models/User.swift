@@ -20,7 +20,7 @@ class MyUser{
     init(user: User){
         self.nombre = user.displayName
         self.email = user.email
-        self.id = user.providerID
+        self.id = user.uid
         self.avatar = user.photoURL
     }
     

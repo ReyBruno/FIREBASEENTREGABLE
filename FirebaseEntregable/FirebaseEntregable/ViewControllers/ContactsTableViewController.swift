@@ -14,7 +14,6 @@ class ContactsTableViewController: UITableViewController {
     
     var theUser:MyUser?
     var contacts:[Contact] = []
-    var service = ContactService()
     var ref: DatabaseReference!
 
     @IBAction func logoutTapped(_ sender: Any) {
@@ -25,14 +24,29 @@ class ContactsTableViewController: UITableViewController {
         self.navigationItem.hidesBackButton = true
         if self.theUser != nil{
             print("Tengo un usuario: \(String(describing: theUser))")
+            obtenerContactos()
         }
+        
+        self.tableView.rowHeight = 200
+        }
+    
+    
+        
+        
+        //id es [[String:AnyObject]] da contacts
+        //contacts es [[String:AnyObject]] y da contacto.phone
+        //contacto.phone es [String:AnyObject]]
+        
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    
     
     func logoutSession() -> Void {
         AuthenticationService().logoutSession()
@@ -40,9 +54,29 @@ class ContactsTableViewController: UITableViewController {
        
         }
     
-    func observeNewContacts(){
-        
-    }
+    
+    func obtenerContactos(){
+        self.ref = Database.database().reference()
+            if let user = theUser{
+                if let userId = user.id{
+                    
+                    ref.child(userId).child("contacts").observeSingleEvent(of: DataEventType.value, with: {
+                        (snapshot) in
+                        if let contactsDictionary = snapshot.value as? [[String:AnyObject]]{
+                                for dictionary in contactsDictionary{
+                                    let newContact = Contact(dictionary: dictionary)
+                                    self.contacts.append(newContact)
+                                    
+                                }
+                        }
+                        
+                                
+                            })
+                        }
+                    }
+                }
+    
+    
         
     
 
@@ -75,6 +109,18 @@ class ContactsTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue:UIStoryboardSegue, sender:Any?){
+        
+        if let destination = segue.destination as? NewContactViewController{
+            destination.theUser = self.theUser
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        obtenerContactos()
+        self.tableView.reloadData()
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

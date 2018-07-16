@@ -21,5 +21,12 @@ class Contact{
         self.isDigital = dictionary["isDigital"] as? Bool ?? false
         
     }
+    
+    init(name: String, phone: String, email:String, isDigital: Bool){
+        self.name = name
+        self.phone = phone
+        self.email = email
+        self.isDigital = isDigital
+    }
 
 }

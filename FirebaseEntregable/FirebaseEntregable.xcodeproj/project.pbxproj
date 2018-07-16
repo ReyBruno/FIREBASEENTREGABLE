@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		1364F2D420F664370028F5CE /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364F2D320F664370028F5CE /* AuthenticationService.swift */; };
 		1364F2D620F66C990028F5CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1364F2D520F66C990028F5CE /* User.swift */; };
+		137606BC20FCE891005A93A6 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137606BB20FCE891005A93A6 /* NewContactViewController.swift */; };
 		137A245020F7C8E700E4593F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A244F20F7C8E700E4593F /* Contact.swift */; };
-		137A245220F7CA1400E4593F /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A245120F7CA1400E4593F /* ContactService.swift */; };
 		137A245520F7CAB600E4593F /* ContactsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A245420F7CAB600E4593F /* ContactsDao.swift */; };
 		13DF91F420F547F30088B1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DF91F320F547F30088B1AB /* AppDelegate.swift */; };
 		13DF91F620F547F30088B1AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DF91F520F547F30088B1AB /* ViewController.swift */; };
@@ -28,8 +28,8 @@
 		020E9E4D5C7EE72EDDCF3426 /* Pods-FirebaseEntregable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseEntregable.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseEntregable/Pods-FirebaseEntregable.release.xcconfig"; sourceTree = "<group>"; };
 		1364F2D320F664370028F5CE /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		1364F2D520F66C990028F5CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		137606BB20FCE891005A93A6 /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		137A244F20F7C8E700E4593F /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		137A245120F7CA1400E4593F /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		137A245420F7CAB600E4593F /* ContactsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDao.swift; sourceTree = "<group>"; };
 		13DF91F020F547F30088B1AB /* FirebaseEntregable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseEntregable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13DF91F320F547F30088B1AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				1364F2D320F664370028F5CE /* AuthenticationService.swift */,
-				137A245120F7CA1400E4593F /* ContactService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -126,6 +125,7 @@
 				13DF91F520F547F30088B1AB /* ViewController.swift */,
 				13DF920820F54C3B0088B1AB /* LoginViewController.swift */,
 				13DF920A20F55B690088B1AB /* ContactsTableViewController.swift */,
+				137606BB20FCE891005A93A6 /* NewContactViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -339,8 +339,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13DF920920F54C3B0088B1AB /* LoginViewController.swift in Sources */,
+				137606BC20FCE891005A93A6 /* NewContactViewController.swift in Sources */,
 				13DF920E20F55BA60088B1AB /* LocalContactTableViewCell.swift in Sources */,
-				137A245220F7CA1400E4593F /* ContactService.swift in Sources */,
 				137A245520F7CAB600E4593F /* ContactsDao.swift in Sources */,
 				13DF91F620F547F30088B1AB /* ViewController.swift in Sources */,
 				1364F2D420F664370028F5CE /* AuthenticationService.swift in Sources */,

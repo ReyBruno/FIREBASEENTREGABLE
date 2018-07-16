@@ -81,7 +81,7 @@
         <scene sceneID="gOP-PY-K8E">
             <objects>
                 <tableViewController id="3zY-n6-oTo" customClass="ContactsTableViewController" customModule="FirebaseEntregable" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hHn-Ql-vaK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hHn-Ql-vaK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,7 +163,7 @@
                         <barButtonItem key="rightBarButtonItem" title="+Contact" id="jxT-Dn-4O4">
                             <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="hIi-gP-cD1" kind="show" id="HD6-di-3eJ"/>
+                                <segue destination="hIi-gP-cD1" kind="show" identifier="addUserSegue" id="NkE-VJ-MRC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="2036" y="124.58770614692655"/>
         </scene>
-        <!--View Controller-->
+        <!--New Contact View Controller-->
         <scene sceneID="Qwb-jo-bMr">
             <objects>
-                <viewController id="hIi-gP-cD1" sceneMemberID="viewController">
+                <viewController id="hIi-gP-cD1" customClass="NewContactViewController" customModule="FirebaseEntregable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lvB-Dk-H2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,6 +230,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveContactTapped:" destination="hIi-gP-cD1" eventType="touchUpInside" id="4o5-7c-Tvb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,6 +264,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rJf-oz-vv5"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="vbu-2g-ghz" id="tNs-6o-H6B"/>
+                        <outlet property="isDigitalSegmented" destination="Wqm-dH-zza" id="lUM-b4-9VJ"/>
+                        <outlet property="nameField" destination="p4K-Hn-CUW" id="OLL-V6-AxM"/>
+                        <outlet property="phoneField" destination="p4K-Hn-CUW" id="GyB-VV-7Pb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxg-LH-2Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
